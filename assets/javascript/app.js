@@ -74,6 +74,15 @@ $("#address_submit").click(function()
 		"&lon=" + userLocation.longitude + "&appid=" + apiKeys.openWeatherAPI;
 		console.log(openWeatherURL);
 
+		$.ajax(
+		{
+			url: openWeatherURL,
+			method: "GET"
+		}).done(function(weatherapireturn)
+		{
+			console.log(weatherapireturn);
+		})
+
 	})
 
 	var zillowURL = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=" + apiKeys.zillow + 
@@ -81,7 +90,15 @@ $("#address_submit").click(function()
 		"%2C+" + userAddress.state;
 	console.log("Zillow: " + zillowURL);
 
-
+	$.ajax(
+	{
+		url: zillowURL,
+		dataType: "xml",
+		method: "GET",
+	})
+	.done(function(zillowapireturn){
+		console.log(zillowapireturn);
+	})
 
 
 
