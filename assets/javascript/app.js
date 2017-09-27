@@ -70,7 +70,7 @@ $("#address_submit").click(function()
 		var streetViewImage = $("<img>").attr("src", steetviewURL)
 		$("#streetview_results").prepend(streetViewImage);
 
-		var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + userLocation.latitude +
+		var openWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + userLocation.latitude +
 		"&lon=" + userLocation.longitude + "&appid=" + apiKeys.openWeatherAPI;
 		console.log(openWeatherURL);
 
@@ -85,7 +85,7 @@ $("#address_submit").click(function()
 
 	})
 
-	var zillowURL = "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=" + apiKeys.zillow + 
+	var zillowURL = "https://www.zillow.com/webservice/GetSearchResults.htm?zws-id=" + apiKeys.zillow + 
 		"&address=" + userAddress.street1 + "&citystatezip=" + userAddress.city +
 		"%2C+" + userAddress.state;
 	console.log("Zillow: " + zillowURL);
